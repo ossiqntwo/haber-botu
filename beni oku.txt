@@ -1,0 +1,84 @@
+1. WordPress Kurulumu
+
+WordPress'i kurmak için bir web sunucusuna (örneğin, Apache, Nginx) ve bir veritabanına (örneğin, MySQL, PostgreSQL) ihtiyacınız olacak.
+WordPress'i indirin ve web sunucunuza yükleyin.
+Veritabanını oluşturun ve WordPress'i kurun.
+2. WordPress API Eklentisi Kurulumu
+
+WordPress API eklentisini indirin ve WordPress'e yükleyin.
+Eklentiyi etkinleştirin ve API anahtarınızı oluşturun.
+3. Haber Botu Kurulumu
+
+Haber botu dosyalarını indirin ve bir klasöre yükleyin.
+config.js dosyasını düzenleyin ve WordPress API anahtarınızı, haber botu ayarlarınızı girin.
+npm install komutunu çalıştırın ve gereken paketleri yükleyin.
+4. Haber Botu Ayarları
+
+config.js dosyasını düzenleyin ve haber botu ayarlarınızı girin.
+Haber botu kaynaklarını (örneğin, NewsAPI, RSS) ayarlayın.
+Haber botu kategorilerini (örneğin, genel, teknoloji, ekonomi) ayarlayın.
+5. Haber Botu Çalıştırma
+
+node index.js komutunu çalıştırın ve haber botunu çalıştırın.
+Haber botu, haberleri toplamak ve WordPress'e göndermek için çalışmaya başlayacaktır.
+6. Zamanlayıcı Ayarları
+
+Haber botunu belirli aralıklarla çalıştırmak için zamanlayıcı ayarlayın.
+node-cron paketini kullanabilirsiniz.
+7. Güvenlik Ayarları
+
+Haber botu için güvenlik ayarlarını yapılandırın.
+API anahtarlarınızı ve haber botu ayarlarınızı güvenli bir şekilde saklayın.
+WordPress API Eklentisi Kurulumu
+
+WordPress API eklentisini kurmak için aşağıdaki adımları takip edin:
+WordPress yönetim paneline gidin.
+Eklentiler > Yeni Eklenti sayfasına gidin.
+Arama alanına "WP REST API" yazın ve aratın.
+WP REST API eklentisini bulun ve yükleyin.
+Eklentiyi etkinleştirin.
+WP REST API > Ayarlar sayfasına gidin.
+API anahtarınızı oluşturun.
+Haber Botu Dosyaları
+
+Haber botu dosyalarını aşağıdaki gibi düzenleyin:
+config.js: Haber botu ayarlarını girin.
+index.js: Haber botu kodunu düzenleyin.
+package.json: Paket bilgilerini düzenleyin.
+Zamanlayıcı Ayarları
+
+Zamanlayıcı ayarlarını aşağıdaki gibi yapılandırın:
+node-cron paketini kullanın.
+Zamanlayıcı ayarlarını config.js dosyasında yapılandırın.
+Güvenlik Ayarları
+
+Güvenlik ayarlarını aşağıdaki gibi yapılandırın:
+API anahtarlarınızı güvenli bir şekilde saklayın.
+Haber botu ayarlarınızı güvenli bir şekilde saklayın.
+Not: Bu talimatlar, haber botu kurulumu için genel bir rehberdir. Haber botu kurulumu sırasında oluşabilecek sorunları çözmek için, haber botu kodunu ve WordPress API eklentisini iyice incelemeniz gerekir.▸ WORDPRESS BOT
+-----------------
+  const bot = new WordPressHaberBotu({
+      wordpressUrl: 'https://siteninadresi.com',
+      wpUsername: 'admin',
+      wpAppPassword: 'xxxx xxxx xxxx xxxx',
+      newsApiKey: '856ec0c76ffd4384a6ba17a6fb2b0c26',
+      maxHaberPerRun: 2,
+      autoPublish: false,    // true = direkt yayınla
+      sendImage: true,
+      minInterval: 3,
+      maxInterval: 6
+  });
+
+
+▸ TELEGRAM BOT
+---------------
+  bot = TelegramHaberBotu({
+      'telegramToken': '1234567890:ABCdefGHI...',
+      'chatId': '-1001234567890',
+      'newsApiKey': '856ec0c76ffd4384a6ba17a6fb2b0c26',
+      'maxHaberPerRun': 2,
+      'sendImage': True,
+      'addHashtags': True,
+      'minInterval': 3,
+      'maxInterval': 6
+  })
